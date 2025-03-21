@@ -14,7 +14,7 @@ Projeto interdisciplinar da PUC. A escolha do grupo foi o desenvolvimento de um 
 <hr style="border:2px solid gray">
 
 ## 🛠️ WIP
-- Sprint 1 (Em andamento)
-- Sprint 2 (---)
-- Sprint Final (---)
+- [Sprint 1](https://github.com/gabrieldeverdade/Smart-Cup-Arduino/tree/main/Sprint%201) - (Em andamento)
+- Sprint 2 - (---)
+- Sprint Final - (---)
 <hr style="border:2px solid gray">
