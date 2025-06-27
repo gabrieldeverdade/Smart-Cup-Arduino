@@ -8,7 +8,12 @@ O **Smart Cup** é um copo inteligente desenvolvido com Arduino e sensores integ
 
 ## 🎥 Pitch do Projeto
 
-[![Assista ao Pitch no YouTube](https://img.youtube.com/vi/rBjbxsgFwZA/0.jpg)](https://youtu.be/rBjbxsgFwZA)
+<p align="center">
+  <a href="https://youtu.be/rBjbxsgFwZA" target="_blank">
+    <img src="https://img.youtube.com/vi/rBjbxsgFwZA/0.jpg" alt="Assista ao Pitch no YouTube" />
+  </a>
+</p>
+
 
 ---
 
@@ -68,7 +73,7 @@ O projeto tem como objetivo incentivar a hidratação saudável através de um s
 
 <!-- Confira a pasta de cada Sprint para saber como abrir o projeto  -->
 
-- [Sprint 1]() - (Concluído 28/03/2025)
-- [Sprint 2]() - (Concluído 09/05/2025)
-- [Sprint Final]() - (Concluído 13/06/2025)
+- [Sprint 1](https://github.com/gabrieldeverdade/Smart-Cup-Arduino/tree/main/Sprint1) - (Concluído 28/03/2025)
+- [Sprint 2](https://github.com/gabrieldeverdade/Smart-Cup-Arduino/tree/main/Sprint2) - (Concluído 09/05/2025)
+- [Sprint Final](https://github.com/gabrieldeverdade/Smart-Cup-Arduino/tree/main/Sprint3) - (Concluído 13/06/2025)
 <hr style="border:2px solid gray">
