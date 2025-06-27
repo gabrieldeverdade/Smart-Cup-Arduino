@@ -1,0 +1,163 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+
+\usepackage{graphicx,url}
+
+%\usepackage[brazil]{babel}   
+\usepackage[utf8]{inputenc}  
+
+     
+\sloppy
+
+\title{ Copo Inteligente Utilizando Arduíno\\ Trabalho Interdisciplinar V - Sprint 1}
+
+\author{
+Andre Santos Alves\inst{1}, Bernardo D Ávila R. Bartholomeu\inst{1}, Gabriel Azevedo Fernandes\inst{1} \\
+Pedro Henrique Moreira\inst{2}, Luis Henrique D. Guedes\inst{3}
+}
+
+
+
+\address{Pontifícia Universidade Católica de Minas Gerais
+  (PUC Minas)\\
+  Belo Horizonte -- MG -- Brazil
+\nextinstitute
+  Ciência da Computação -- Universidade Católica de Minas Gerais\\
+  Belo Horizonte, BR.
+\nextinstitute
+  Trabalho Interdisciplinar V: Sistemas Computacionais\\
+  Sprint 1
+  \email{andre.alves.1330374@sga.pucminas.br, barbartholomeu@sga.pucminas.br}
+  \email{gabriel.fernandes.1378675@sga.pucminas.br, pedro.moreira.1371124@sga.pucminas.br}
+  \email{lhdguedes@pucminas.com.br}
+}
+\usepackage{hyperref}
+
+\begin{document} 
+
+\maketitle
+
+\begin{abstract}
+  This paper presents the development of a smart cup as an interdisciplinary project for the Computational Systems course. The project integrates knowledge from computer architecture, networking, and operating systems, using Arduino Uno, a water flow sensor, and other electronic components. The solution aims to monitor water consumption in an automated and connected way. The theoretical foundation explores embedded technologies and data communication. The methodology includes modeling, hardware development, a scheduled plan, and practical measurement tests for prototype validation.
+\end{abstract}
+     
+\begin{resumo} 
+  Este artigo apresenta o desenvolvimento de um copo inteligente como proposta interdisciplinar para a disciplina de Sistemas Computacionais. O projeto integra conhecimentos de arquitetura de computadores, redes e sistemas operacionais, utilizando Arduino Uno, sensor de fluxo de água e demais componentes eletrônicos. A solução visa monitorar o consumo de água de forma automatizada e conectada. A fundamentação teórica explora tecnologias embarcadas e comunicação de dados. A metodologia envolve modelagem, desenvolvimento de hardware, planejamento por cronograma e aplicação de testes com medição prática para validação do protótipo.
+\end{resumo}
+
+\newpage
+
+\section{Introdução} \label{sec:firstpage}
+
+A ingestão adequada de água é fundamental para o bom funcionamento do organismo, influenciando diretamente a saúde, o bem-estar e o desempenho cognitivo. No entanto, muitas pessoas têm dificuldade em monitorar a quantidade de água consumida ao longo do dia, o que pode resultar em desidratação e suas consequências, como fadiga, dores de cabeça, redução da concentração e problemas renais a longo prazo. Apesar da existência de aplicativos voltados para o controle da hidratação, a necessidade de inserção manual dos dados torna o processo suscetível a esquecimentos e imprecisões, dificultando a adoção de um hábito consistente. Além disso, a falta de integração entre esses sistemas e objetos de uso diário reduz sua eficácia e adesão por parte dos usuários.
+
+Diante desse cenário, uma solução inovadora e eficiente seria o desenvolvimento de um copo inteligente, equipado com sensores capazes de medir automaticamente a quantidade de água ingerida pelo usuário. Esses dados seriam transmitidos para um aplicativo integrado, permitindo um acompanhamento preciso e automatizado da hidratação diária. Com essa abordagem, busca-se não apenas facilitar o controle do consumo de água, mas também incentivar hábitos saudáveis por meio da tecnologia, tornando a hidratação uma prática mais acessível e intuitiva.
+
+\section{Contextualizando o Cenário}
+
+A preocupação com a saúde e o bem-estar tem levado ao desenvolvimento de diversas tecnologias voltadas para a adoção de hábitos saudáveis. Dentro desse contexto, a hidratação adequada se destaca como um fator essencial para a manutenção das funções fisiológicas do corpo humano, impactando desde a energia e o desempenho cognitivo até a prevenção de doenças crônicas. No entanto, estudos indicam que grande parte da população não consome a quantidade ideal de água diariamente, seja por esquecimento, falta de percepção da necessidade ou dificuldades em monitorar a ingestão.
+
+O avanço da Internet das Coisas (IoT) e a integração de dispositivos inteligentes ao dia a dia das pessoas têm possibilitado novas formas de automação e monitoramento de hábitos. Essa tendência abre caminho para soluções que vão além dos aplicativos tradicionais, permitindo que objetos comuns do cotidiano, como um copo, desempenhem um papel ativo na promoção da saúde.
+
+Dessa forma, a criação de um copo inteligente que mede automaticamente a quantidade de água ingerida e transmite esses dados para um aplicativo surge como uma alternativa prática e eficiente. Essa solução visa não apenas eliminar erros de registro e a necessidade de inserção manual de dados, mas também aumentar a adesão ao hábito da hidratação, tornando-o mais intuitivo e integrado à rotina dos usuários.
+
+
+\newpage
+\section{Problemas Identificados e Propostas de Solução}
+
+O projeto \textbf{Smart Cup} surgiu a partir da identificação de desafios relacionados ao monitoramento do consumo de água. A seguir, são apresentados os problemas observados e as soluções propostas para cada um deles.
+
+\subsection{Falta de Consciência no Consumo Diário de Água}
+
+\textbf{Descrição:}  
+Muitos usuários não têm uma percepção precisa do quanto estão consumindo de água ao longo do dia, o que dificulta o controle adequado da ingestão.
+
+\textbf{Solução Proposta:}  
+O copo inteligente conta com sensores de fluxo que medem automaticamente a quantidade de água consumida. Esses dados são transmitidos em tempo real para o aplicativo via Bluetooth, eliminando a necessidade de registros manuais e proporcionando um acompanhamento preciso e contínuo.
+
+\subsection{Desafios na Integração com a Rotina Diária}
+
+\textbf{Descrição:}  
+Aplicativos de monitoramento de consumo de água muitas vezes não se ajustam bem às rotinas dos usuários, o que dificulta sua adesão a longo prazo.
+
+\textbf{Solução Proposta:}  
+O sistema integra o monitoramento diretamente ao cotidiano do usuário, enviando notificações personalizadas e lembretes conforme seu comportamento diário. A comunicação via Bluetooth entre o copo e o aplicativo possibilita atualizações em tempo real e personalização da experiência, tornando o processo mais intuitivo e eficiente.
+
+\subsection{Complexidade e Desinteresse por Aplicativos de Monitoramento}
+
+\textbf{Descrição:}  
+Diversos aplicativos de monitoramento de saúde são considerados difíceis de usar ou excessivamente complexos, o que pode levar os usuários a desistirem de utilizá-los.
+
+\textbf{Solução Proposta:}  
+O aplicativo será desenvolvido com uma interface simples e interativa, proporcionando uma experiência agradável e fácil de usar. A integração com o copo garante a transmissão automática dos dados, sem a necessidade de interação constante, incentivando o uso contínuo e engajado.
+
+\subsection{Inconveniência de Manter um Registro Manual}
+
+\textbf{Descrição:}  
+Registrar manualmente a ingestão de água é uma tarefa tediosa e propensa a erros, impactando a precisão do monitoramento.
+
+\textbf{Solução Proposta:}  
+O processo de registro será automatizado por meio dos sensores integrados ao copo, que capturam os dados de forma precisa e contínua. A sincronização com o aplicativo garantirá que as informações estejam sempre atualizadas, eliminando a necessidade de qualquer intervenção manual.
+
+\newpage
+
+\section{Objetivos}
+
+O objetivo principal do projeto \textbf{Smart Cup} é desenvolver um copo inteligente que permita o monitoramento automatizado e preciso do consumo de água, fornecendo dados em tempo real ao usuário por meio de um aplicativo móvel. A solução visa não apenas automatizar o processo de registro, mas também integrar o acompanhamento à rotina do usuário, incentivando hábitos saudáveis e a adesão ao controle do consumo.
+
+Para alcançar esse objetivo, será implementado um sensor de fluxo no copo, que medirá automaticamente a ingestão de água. Os dados serão transmitidos para o aplicativo via Bluetooth, garantindo uma interface intuitiva para o usuário. O aplicativo permitirá o acompanhamento contínuo da hidratação e enviará notificações e lembretes ajustados às necessidades diárias do usuário.
+
+O projeto também busca eliminar a necessidade de registros manuais, assegurando que as informações sejam sempre precisas e atualizadas. A interface será projetada para ser acessível e motivadora, promovendo o engajamento constante com o monitoramento do consumo de água ao longo do dia.
+
+
+
+
+
+
+
+
+\newpage
+
+\section{References}
+
+\vspace{0.4cm}
+\noindent
+[1] Tasong, A. C.; Abao, R. P. (2019). Design and Development of an IoT Application with Visual Analytics for Water Consumption Monitoring. \emph{Procedia Computer Science}, v. 157, pp. 205–213. DOI: \href{https://doi.org/10.1016/j.procs.2019.08.159}{10.1016/j.procs.2019.08.159}.
+
+\vspace{0.4cm}
+\noindent
+[2] Souza, T. V.; Silva Filho, G. V. (2017). Controlando o consumo de água através da Internet utilizando Arduino. \emph{Anais do Congresso de Iniciação Científica da UDESC}. Disponível em: \href{https://www.udesc.br/arquivos/ceplan/id_cpmenu/1593/4520170911VF_16681133920465_1593.pdf}{https://www.udesc.br/...1593.pdf}.
+
+\vspace{0.4cm}
+\noindent
+[3] Martins, D.; Oliveira, R. G.; Oliveira, V. V. (2017). Monitoramento de consumo doméstico de água utilizando uma meta-plataforma de IoT. \emph{Congresso Brasileiro de Computação (CSBC)}. Disponível em: \href{https://www.researchgate.net/publication/318962796}{https://www.researchgate.net/publication/318962796}.
+
+\vspace{0.4cm}
+\noindent
+[4] Oliveira, F. M.; Braga, A. C.; Silva, L. G. (2023). Protótipo IoT para Monitoramento de Consumo de Água em Smart Campus. \emph{Anais Estendidos do ERBASE}. Disponível em: \href{https://sol.sbc.org.br/index.php/erbase/article/view/27695}{https://sol.sbc.org.br/.../27695}.
+
+\vspace{0.4cm}
+\noindent
+[5] Curvello, A. (2017). Monitoramento de água com IoT – Parte 1. \emph{Blog Embarcados}. Disponível em: \href{https://embarcados.com.br/monitoramento-de-agua-com-iot-parte-1}{https://embarcados.com.br/...iot-parte-1}.
+
+\vspace{0.4cm}
+\noindent
+[6] Oliveira, J. V.; Ferraz, G.; Ferreira, P. (2023). Sistema embarcado IoT aplicado ao contexto de crises hídricas. \emph{ResearchGate}. Disponível em: \href{https://www.researchgate.net/publication/367689800}{https://www.researchgate.net/publication/367689800}.
+
+
+\end{document}
